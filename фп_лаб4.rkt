@@ -14,7 +14,7 @@
   (let ((x (- (+ l_car (* 5 i)) (- i 1)))) ; Локальна змінна із зазначеною формулою
          (cond
            ( (null? l_cdr) ; Перевіряє чи пустий ящик
-             (cond
+           (cond
                ( (<= n x) (display "List: ") (display l_tangle) (newline) ) ; виводить інформацію про список при умовах
                (else (set! l_tangle (append l_tangle (list x))) (set! i (+ i 1)) (add_item (car l_tangle) (cdr l_tangle))))) ; Якщо ні, то рекурсія, додає нові елементи до списку.
            (else (add_item (car l_cdr) (cdr l_cdr))))))
@@ -25,8 +25,7 @@
     ( (null? l_cdr)
       (if (= (remainder l_car 2) 0) (set! l_a (append l_a (list l_car))) ; якщо остача = 0, + елемент в список
           (display "") ))
-    (else
-     (cond
+    (else (cond
        ((= (remainder l_car 2) 0) (set! l_a (append l_a (list l_car))) (result_a (car l_cdr) (cdr l_cdr))) 
        (else (result_a (car l_cdr) (cdr l_cdr)))))))
 
@@ -75,7 +74,7 @@
          (else (add product company_req wait (+ 1 opt_req)))))))
 
  
-(display (make-string 3 #\*)) (display "Question 1") (display (make-string 3 #\*)) (newline) (newline) 
+(display "14.1") (newline) (newline) 
  
 (display "Enter n: ") (define n (read))
  
@@ -92,5 +91,5 @@
  
 (newline) (newline)
  
-(display (make-string 3 #\*)) (display "Question 2") (display (make-string 3 #\*)) (newline) (newline) 
+(display "14.2") (newline) (newline) 
 (add 60 5 1 14)
